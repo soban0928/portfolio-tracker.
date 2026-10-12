@@ -194,7 +194,14 @@ class PriceStore:
         if ts not in df.index:
             raise NoPriceDataError(f"No price data for {ticker.upper()} on {ts.date()}")
         row = df.loc[ts]
-        return Bar(ts, row["Open"], row["High"], row["Low"], row["Close"], row["Volume"])
+        return Bar(
+            ts,
+            float(row["Open"]),
+            float(row["High"]),
+            float(row["Low"]),
+            float(row["Close"]),
+            float(row["Volume"]),
+        )
 
     def has_bar(self, ticker: str, when: DateLike) -> bool:
         """True if ``ticker`` has a bar on exactly ``when``."""

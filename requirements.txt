@@ -1,7 +1,6 @@
-# Runtime dependencies (also used by Streamlit Community Cloud).
+# Runtime dependencies (used by Streamlit Community Cloud).
+# The app adds src/ to sys.path itself, so the package needn't be installed.
 pandas>=2.1
 numpy>=1.26
-streamlit>=1.32
+streamlit>=1.45
 plotly>=5.18
-# Install the local package so `import simulator` works on Streamlit Cloud.
--e .

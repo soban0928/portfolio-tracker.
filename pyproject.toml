@@ -8,11 +8,10 @@ version = "0.1.0"
 description = "A virtual stock trading simulator with GBP accounting, realistic fills, analytics and backtesting."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { text = "MIT" }
 dependencies = [
     "pandas>=2.1",
     "numpy>=1.26",
-    "streamlit>=1.32",
+    "streamlit>=1.45",
     "plotly>=5.18",
 ]
 

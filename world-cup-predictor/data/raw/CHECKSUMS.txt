@@ -1,0 +1,6 @@
+# Downloaded 2026-10-12 21:55 UTC
+
+results.csv  sha256=5dcefd1aa0483979ea8378cef5be448d2005609d39945ea162378561a30a6767  https://raw.githubusercontent.com/martj42/international_results/master/results.csv
+shootouts.csv  sha256=072b445adf5183fbe981087857e5b64c8f17abfdbf257b1822ceacb4a37919fa  https://raw.githubusercontent.com/martj42/international_results/master/shootouts.csv
+former_names.csv  sha256=2d57f59a3ac13b24c2fcf208ced5a38710529d122da38929838d0980b002677e  https://raw.githubusercontent.com/martj42/international_results/master/former_names.csv
+fifa_ranking.csv  sha256=d4f4d8d3db8e7560823b31b8db7848e1b85fcd1e1353de1d7e1fbedc6d47226e  https://raw.githubusercontent.com/Dato-Futbol/fifa-ranking/master/ranking_fifa_historical.csv

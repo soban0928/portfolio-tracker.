@@ -121,3 +121,6 @@ def test_max_affordable_quantity():
     assert max_affordable_quantity(1000, 0.0, 1.0, fees) == 0
     slip = FeeConfig(commission=0, slippage_bps=100)
     assert max_affordable_quantity(1010, 10.0, 1.0, slip) == 100  # 10.10 per share
+    no_fees = FeeConfig(commission=0, slippage_bps=0)
+    # 10,000 / (400 / 1.2) is 29.999999999999996 in floating point; must still be 30
+    assert max_affordable_quantity(10_000, 400.0, 1.2, no_fees) == 30

@@ -244,8 +244,9 @@ def max_affordable_quantity(
     budget = cash_gbp - fees.commission
     if budget <= 0 or unit_cost <= 0:
         return 0
-    qty = math.floor(budget / unit_cost)
-    # Guard against floating-point edge cases at the boundary.
+    # Nudge up before flooring so an exact budget (e.g. 29.999999999999996) isn't
+    # rounded down a share, then step back if that overshoots the cash.
+    qty = math.floor(budget / unit_cost + 1e-9)
     while qty > 0 and qty * unit_cost + fees.commission > cash_gbp + 1e-9:
         qty -= 1
     return qty

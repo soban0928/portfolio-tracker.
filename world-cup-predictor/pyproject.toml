@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wcpredict"
+version = "0.1.0"
+description = "International football match prediction and World Cup tournament simulation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.1",
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "scikit-learn>=1.4",
+    "xgboost>=2.0",
+    "shap>=0.45",
+    "streamlit>=1.45",
+    "plotly>=5.18",
+    "joblib>=1.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=4.1", "ruff>=0.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "D", "NPY"]
+ignore = ["D105", "D107", "N803", "N806"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+"app/**" = ["N999", "D"]
+"scripts/**" = ["D"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+markers = ["slow: end-to-end tests that train models on the full dataset"]
+filterwarnings = ["error", "ignore::DeprecationWarning:shap.*", "ignore::UserWarning:shap.*"]
+
+[tool.coverage.run]
+source = ["src/wcpredict"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true

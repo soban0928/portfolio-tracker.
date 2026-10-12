@@ -38,3 +38,12 @@ def toy_matches() -> pd.DataFrame:
         ("2020-06-01", "C", "B", 0, 1, "UEFA Nations League", "C", False),
     ]
     return clean_matches(raw_frame(rows))
+
+
+@pytest.fixture(scope="session")
+def features(matches) -> pd.DataFrame:
+    """Real features (no FIFA ranking), built once per session."""
+    from wcpredict.elo import compute_elo
+    from wcpredict.features import build_features
+
+    return build_features(compute_elo(matches))

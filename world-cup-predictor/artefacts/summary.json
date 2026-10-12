@@ -1,0 +1,799 @@
+{
+ "best_model": "XGBoost",
+ "cv_years": [
+  2018,
+  2026
+ ],
+ "n_sims": 100000,
+ "seed": 2026,
+ "tournaments": {
+  "2018": {
+   "start": "2018-06-14",
+   "n_train_matches": 21513,
+   "hosts": [
+    "Russia"
+   ],
+   "groups": [
+    [
+     "Egypt",
+     "Russia",
+     "Saudi Arabia",
+     "Uruguay"
+    ],
+    [
+     "Iran",
+     "Morocco",
+     "Portugal",
+     "Spain"
+    ],
+    [
+     "Australia",
+     "Denmark",
+     "France",
+     "Peru"
+    ],
+    [
+     "Argentina",
+     "Croatia",
+     "Iceland",
+     "Nigeria"
+    ],
+    [
+     "Brazil",
+     "Costa Rica",
+     "Serbia",
+     "Switzerland"
+    ],
+    [
+     "Germany",
+     "Mexico",
+     "South Korea",
+     "Sweden"
+    ],
+    [
+     "Belgium",
+     "England",
+     "Panama",
+     "Tunisia"
+    ],
+    [
+     "Colombia",
+     "Japan",
+     "Poland",
+     "Senegal"
+    ]
+   ],
+   "match_scores": [
+    {
+     "model": "Base rates",
+     "group_accuracy": 0.3333333333333333,
+     "group_log_loss": 1.0527951265667652,
+     "group_brier": 0.6383820056998483,
+     "group_rps": 0.24181366761664136,
+     "n_group": 48,
+     "ko_log_loss": 0.6931471805599453,
+     "ko_accuracy": 0.3125,
+     "n_ko": 16
+    },
+    {
+     "model": "Elo-only (logistic)",
+     "group_accuracy": 0.5625,
+     "group_log_loss": 0.9529866375763095,
+     "group_brier": 0.5594502100158646,
+     "group_rps": 0.2014068551140482,
+     "n_group": 48,
+     "ko_log_loss": 0.7091896825191775,
+     "ko_accuracy": 0.5,
+     "n_ko": 16
+    },
+    {
+     "model": "Logistic regression",
+     "group_accuracy": 0.5625,
+     "group_log_loss": 0.9453208921183385,
+     "group_brier": 0.5557588786357317,
+     "group_rps": 0.20141293960516027,
+     "n_group": 48,
+     "ko_log_loss": 0.7244582949035905,
+     "ko_accuracy": 0.375,
+     "n_ko": 16
+    },
+    {
+     "model": "Random Forest",
+     "group_accuracy": 0.5833333333333334,
+     "group_log_loss": 0.9526093953139873,
+     "group_brier": 0.560173634590181,
+     "group_rps": 0.20352484865892273,
+     "n_group": 48,
+     "ko_log_loss": 0.7172660664521574,
+     "ko_accuracy": 0.5625,
+     "n_ko": 16
+    },
+    {
+     "model": "XGBoost",
+     "group_accuracy": 0.5625,
+     "group_log_loss": 0.9444761038062118,
+     "group_brier": 0.5561638287173322,
+     "group_rps": 0.20018498261132145,
+     "n_group": 48,
+     "ko_log_loss": 0.7208103909083172,
+     "ko_accuracy": 0.5,
+     "n_ko": 16
+    },
+    {
+     "model": "XGBoost + platt",
+     "group_accuracy": 0.5625,
+     "group_log_loss": 0.9445795767141142,
+     "group_brier": 0.5565237315132427,
+     "group_rps": 0.2003466835180204,
+     "n_group": 48,
+     "ko_log_loss": 0.7197058247425667,
+     "ko_accuracy": 0.5,
+     "n_ko": 16
+    },
+    {
+     "model": "XGBoost + isotonic",
+     "group_accuracy": 0.5625,
+     "group_log_loss": 0.9344186853189201,
+     "group_brier": 0.550328483300655,
+     "group_rps": 0.19794012830651256,
+     "n_group": 48,
+     "ko_log_loss": 0.7121401371875173,
+     "ko_accuracy": 0.5,
+     "n_ko": 16
+    },
+    {
+     "model": "Dixon-Coles Elo-only (goals)",
+     "group_accuracy": 0.5625,
+     "group_log_loss": 0.9524545281904245,
+     "group_brier": 0.5603674115789506,
+     "group_rps": 0.20204449969413596,
+     "n_group": 48,
+     "ko_log_loss": 0.7056692700381229,
+     "ko_accuracy": 0.5,
+     "n_ko": 16
+    },
+    {
+     "model": "Dixon-Coles (goals)",
+     "group_accuracy": 0.6041666666666666,
+     "group_log_loss": 0.9328819396479379,
+     "group_brier": 0.5478954890452404,
+     "group_rps": 0.1965257970217501,
+     "n_group": 48,
+     "ko_log_loss": 0.7374871188215861,
+     "ko_accuracy": 0.5,
+     "n_ko": 16
+    }
+   ],
+   "tournament": {
+    "full": {
+     "champion": "France",
+     "champion_p_win": 0.04102,
+     "champion_rank": 9,
+     "favourite": "Brazil",
+     "favourite_p_win": 0.28907000000000005,
+     "finalist_ranks": {
+      "France": 9,
+      "Croatia": 14
+     },
+     "semifinalist_ranks": {
+      "France": 9,
+      "Croatia": 14,
+      "Belgium": 8,
+      "England": 5
+     },
+     "stage_brier": {
+      "R16": {
+       "model": 0.16345729223125,
+       "uniform": 0.25
+      },
+      "QF": {
+       "model": 0.16185076034999998,
+       "uniform": 0.1875
+      },
+      "SF": {
+       "model": 0.1098859644375,
+       "uniform": 0.109375
+      },
+      "FINAL": {
+       "model": 0.0659112653375,
+       "uniform": 0.05859375
+      },
+      "WINNER": {
+       "model": 0.0328169083125,
+       "uniform": 0.0302734375
+      }
+     },
+     "exit_log_score": -1.2311399786888126,
+     "exit_log_score_uniform": -1.342972662334894
+    },
+    "elo_only": {
+     "champion": "France",
+     "champion_p_win": 0.05458000000000001,
+     "champion_rank": 6,
+     "favourite": "Brazil",
+     "favourite_p_win": 0.27965000000000007,
+     "finalist_ranks": {
+      "France": 6,
+      "Croatia": 14
+     },
+     "semifinalist_ranks": {
+      "France": 6,
+      "Croatia": 13,
+      "Belgium": 10,
+      "England": 8
+     },
+     "stage_brier": {
+      "R16": {
+       "model": 0.16220711766249998,
+       "uniform": 0.25
+      },
+      "QF": {
+       "model": 0.1663339155375,
+       "uniform": 0.1875
+      },
+      "SF": {
+       "model": 0.11445932856874999,
+       "uniform": 0.109375
+      },
+      "FINAL": {
+       "model": 0.06508903358125,
+       "uniform": 0.05859375
+      },
+      "WINNER": {
+       "model": 0.03209615803125,
+       "uniform": 0.0302734375
+      }
+     },
+     "exit_log_score": -1.2285693912880666,
+     "exit_log_score_uniform": -1.342972662334894
+    }
+   },
+   "sim_meta": {
+    "n_sims": 100000,
+    "n_batches": 100,
+    "batch_size": 1000,
+    "seed": 2026,
+    "sample_params": true,
+    "mean_penalty_share": 0.13596349813844535
+   },
+   "rho": -0.052841418599763365
+  },
+  "2022": {
+   "start": "2022-11-20",
+   "n_train_matches": 25530,
+   "hosts": [
+    "Qatar"
+   ],
+   "groups": [
+    [
+     "Ecuador",
+     "Netherlands",
+     "Qatar",
+     "Senegal"
+    ],
+    [
+     "England",
+     "Iran",
+     "United States",
+     "Wales"
+    ],
+    [
+     "Argentina",
+     "Mexico",
+     "Poland",
+     "Saudi Arabia"
+    ],
+    [
+     "Australia",
+     "Denmark",
+     "France",
+     "Tunisia"
+    ],
+    [
+     "Costa Rica",
+     "Germany",
+     "Japan",
+     "Spain"
+    ],
+    [
+     "Belgium",
+     "Canada",
+     "Croatia",
+     "Morocco"
+    ],
+    [
+     "Brazil",
+     "Cameroon",
+     "Serbia",
+     "Switzerland"
+    ],
+    [
+     "Ghana",
+     "Portugal",
+     "South Korea",
+     "Uruguay"
+    ]
+   ],
+   "match_scores": [
+    {
+     "model": "Base rates",
+     "group_accuracy": 0.375,
+     "group_log_loss": 1.0625641561711883,
+     "group_brier": 0.6443224763106744,
+     "group_rps": 0.23933152382955683,
+     "n_group": 48,
+     "ko_log_loss": 0.6931471805599453,
+     "ko_accuracy": 0.1875,
+     "n_ko": 16
+    },
+    {
+     "model": "Elo-only (logistic)",
+     "group_accuracy": 0.4791666666666667,
+     "group_log_loss": 1.1197295623140828,
+     "group_brier": 0.6473310321401549,
+     "group_rps": 0.24303182769417764,
+     "n_group": 48,
+     "ko_log_loss": 0.5673077663975972,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    },
+    {
+     "model": "Logistic regression",
+     "group_accuracy": 0.5208333333333334,
+     "group_log_loss": 1.1078602173928283,
+     "group_brier": 0.6444051152617386,
+     "group_rps": 0.241636849900248,
+     "n_group": 48,
+     "ko_log_loss": 0.587022445905337,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    },
+    {
+     "model": "Random Forest",
+     "group_accuracy": 0.5,
+     "group_log_loss": 1.1029929360693118,
+     "group_brier": 0.6436803478676922,
+     "group_rps": 0.2404664828502366,
+     "n_group": 48,
+     "ko_log_loss": 0.5587284627036817,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    },
+    {
+     "model": "XGBoost",
+     "group_accuracy": 0.5208333333333334,
+     "group_log_loss": 1.1154166250636937,
+     "group_brier": 0.6495188143115146,
+     "group_rps": 0.24312236668314227,
+     "n_group": 48,
+     "ko_log_loss": 0.5858023208724343,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    },
+    {
+     "model": "XGBoost + platt",
+     "group_accuracy": 0.5208333333333334,
+     "group_log_loss": 1.1398411819322476,
+     "group_brier": 0.6554749713547627,
+     "group_rps": 0.24600005001336236,
+     "n_group": 48,
+     "ko_log_loss": 0.5854950090419371,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    },
+    {
+     "model": "XGBoost + isotonic",
+     "group_accuracy": 0.5208333333333334,
+     "group_log_loss": 1.1229010399596067,
+     "group_brier": 0.6399396233968351,
+     "group_rps": 0.24051449983627782,
+     "n_group": 48,
+     "ko_log_loss": 0.5914141101891761,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    },
+    {
+     "model": "Dixon-Coles Elo-only (goals)",
+     "group_accuracy": 0.5,
+     "group_log_loss": 1.1032817717124574,
+     "group_brier": 0.6425217040604,
+     "group_rps": 0.24103297315863514,
+     "n_group": 48,
+     "ko_log_loss": 0.571256532778791,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    },
+    {
+     "model": "Dixon-Coles (goals)",
+     "group_accuracy": 0.4583333333333333,
+     "group_log_loss": 1.0962773380353896,
+     "group_brier": 0.6398825753350064,
+     "group_rps": 0.23836595348755085,
+     "n_group": 48,
+     "ko_log_loss": 0.5560034050748699,
+     "ko_accuracy": 0.8125,
+     "n_ko": 16
+    }
+   ],
+   "tournament": {
+    "full": {
+     "champion": "Argentina",
+     "champion_p_win": 0.28089000000000003,
+     "champion_rank": 2,
+     "favourite": "Brazil",
+     "favourite_p_win": 0.28991,
+     "finalist_ranks": {
+      "Argentina": 2,
+      "France": 4
+     },
+     "semifinalist_ranks": {
+      "Argentina": 1,
+      "France": 3,
+      "Morocco": 28,
+      "Croatia": 14
+     },
+     "stage_brier": {
+      "R16": {
+       "model": 0.22532534840000001,
+       "uniform": 0.25
+      },
+      "QF": {
+       "model": 0.1215710470375,
+       "uniform": 0.1875
+      },
+      "SF": {
+       "model": 0.09894488170624999,
+       "uniform": 0.109375
+      },
+      "FINAL": {
+       "model": 0.04288428154375,
+       "uniform": 0.05859375
+      },
+      "WINNER": {
+       "model": 0.01928321190625,
+       "uniform": 0.0302734375
+      }
+     },
+     "exit_log_score": -1.2034574824070665,
+     "exit_log_score_uniform": -1.3429726623348939
+    },
+    "elo_only": {
+     "champion": "Argentina",
+     "champion_p_win": 0.22184999999999996,
+     "champion_rank": 2,
+     "favourite": "Brazil",
+     "favourite_p_win": 0.2712,
+     "finalist_ranks": {
+      "Argentina": 2,
+      "France": 5
+     },
+     "semifinalist_ranks": {
+      "Argentina": 2,
+      "France": 4,
+      "Morocco": 28,
+      "Croatia": 13
+     },
+     "stage_brier": {
+      "R16": {
+       "model": 0.22904535824999997,
+       "uniform": 0.25
+      },
+      "QF": {
+       "model": 0.12565351479999998,
+       "uniform": 0.1875
+      },
+      "SF": {
+       "model": 0.10175768420625,
+       "uniform": 0.109375
+      },
+      "FINAL": {
+       "model": 0.045575404325,
+       "uniform": 0.05859375
+      },
+      "WINNER": {
+       "model": 0.021949431418750002,
+       "uniform": 0.0302734375
+      }
+     },
+     "exit_log_score": -1.2159556473247966,
+     "exit_log_score_uniform": -1.3429726623348939
+    }
+   },
+   "sim_meta": {
+    "n_sims": 100000,
+    "n_batches": 100,
+    "batch_size": 1000,
+    "seed": 2026,
+    "sample_params": true,
+    "mean_penalty_share": 0.13878530471907205
+   },
+   "rho": -0.03867643693415244
+  },
+  "2026": {
+   "start": "2026-06-11",
+   "n_train_matches": 29189,
+   "hosts": [
+    "Canada",
+    "Mexico",
+    "United States"
+   ],
+   "groups": [
+    [
+     "Czech Republic",
+     "Mexico",
+     "South Africa",
+     "South Korea"
+    ],
+    [
+     "Bosnia and Herzegovina",
+     "Canada",
+     "Qatar",
+     "Switzerland"
+    ],
+    [
+     "Australia",
+     "Paraguay",
+     "Turkey",
+     "United States"
+    ],
+    [
+     "Brazil",
+     "Haiti",
+     "Morocco",
+     "Scotland"
+    ],
+    [
+     "Cura\u00e7ao",
+     "Ecuador",
+     "Germany",
+     "Ivory Coast"
+    ],
+    [
+     "Japan",
+     "Netherlands",
+     "Sweden",
+     "Tunisia"
+    ],
+    [
+     "Belgium",
+     "Egypt",
+     "Iran",
+     "New Zealand"
+    ],
+    [
+     "Cape Verde",
+     "Saudi Arabia",
+     "Spain",
+     "Uruguay"
+    ],
+    [
+     "France",
+     "Iraq",
+     "Norway",
+     "Senegal"
+    ],
+    [
+     "Algeria",
+     "Argentina",
+     "Austria",
+     "Jordan"
+    ],
+    [
+     "Colombia",
+     "DR Congo",
+     "Portugal",
+     "Uzbekistan"
+    ],
+    [
+     "Croatia",
+     "England",
+     "Ghana",
+     "Panama"
+    ]
+   ],
+   "match_scores": [
+    {
+     "model": "Base rates",
+     "group_accuracy": 0.4583333333333333,
+     "group_log_loss": 1.096372046677305,
+     "group_brier": 0.6647969794797661,
+     "group_rps": 0.23116986695033137,
+     "n_group": 72,
+     "ko_log_loss": 0.6931471805599453,
+     "ko_accuracy": 0.46875,
+     "n_ko": 32
+    },
+    {
+     "model": "Elo-only (logistic)",
+     "group_accuracy": 0.625,
+     "group_log_loss": 0.892825836332344,
+     "group_brier": 0.5346221078906822,
+     "group_rps": 0.16423573690815144,
+     "n_group": 72,
+     "ko_log_loss": 0.481286639681045,
+     "ko_accuracy": 0.78125,
+     "n_ko": 32
+    },
+    {
+     "model": "Logistic regression",
+     "group_accuracy": 0.625,
+     "group_log_loss": 0.8902796961342224,
+     "group_brier": 0.5305477181612894,
+     "group_rps": 0.16232717481718173,
+     "n_group": 72,
+     "ko_log_loss": 0.46307328085118427,
+     "ko_accuracy": 0.78125,
+     "n_ko": 32
+    },
+    {
+     "model": "Random Forest",
+     "group_accuracy": 0.6111111111111112,
+     "group_log_loss": 0.8987557900505077,
+     "group_brier": 0.5362340294564176,
+     "group_rps": 0.16530541903593507,
+     "n_group": 72,
+     "ko_log_loss": 0.48350847293078525,
+     "ko_accuracy": 0.8125,
+     "n_ko": 32
+    },
+    {
+     "model": "XGBoost",
+     "group_accuracy": 0.6111111111111112,
+     "group_log_loss": 0.9055937321699185,
+     "group_brier": 0.5384629338525726,
+     "group_rps": 0.16579676477789163,
+     "n_group": 72,
+     "ko_log_loss": 0.4769541064938341,
+     "ko_accuracy": 0.8125,
+     "n_ko": 32
+    },
+    {
+     "model": "XGBoost + platt",
+     "group_accuracy": 0.6111111111111112,
+     "group_log_loss": 0.9027247266690099,
+     "group_brier": 0.5377122961986939,
+     "group_rps": 0.16561537945086943,
+     "n_group": 72,
+     "ko_log_loss": 0.47598350695243774,
+     "ko_accuracy": 0.8125,
+     "n_ko": 32
+    },
+    {
+     "model": "XGBoost + isotonic",
+     "group_accuracy": 0.6111111111111112,
+     "group_log_loss": 0.9100505911870523,
+     "group_brier": 0.5425268055275848,
+     "group_rps": 0.16803090681568456,
+     "n_group": 72,
+     "ko_log_loss": 0.47704760253924783,
+     "ko_accuracy": 0.8125,
+     "n_ko": 32
+    },
+    {
+     "model": "Dixon-Coles Elo-only (goals)",
+     "group_accuracy": 0.625,
+     "group_log_loss": 0.9099540015104535,
+     "group_brier": 0.5416340927943065,
+     "group_rps": 0.16690907276353512,
+     "n_group": 72,
+     "ko_log_loss": 0.48993026909187004,
+     "ko_accuracy": 0.8125,
+     "n_ko": 32
+    },
+    {
+     "model": "Dixon-Coles (goals)",
+     "group_accuracy": 0.6111111111111112,
+     "group_log_loss": 0.8860508770428983,
+     "group_brier": 0.5260861136583194,
+     "group_rps": 0.1605519952317599,
+     "n_group": 72,
+     "ko_log_loss": 0.45761606118391474,
+     "ko_accuracy": 0.875,
+     "n_ko": 32
+    }
+   ],
+   "tournament": {
+    "full": {
+     "champion": "Spain",
+     "champion_p_win": 0.21821000000000007,
+     "champion_rank": 1,
+     "favourite": "Spain",
+     "favourite_p_win": 0.21821000000000007,
+     "finalist_ranks": {
+      "Spain": 1,
+      "Argentina": 2
+     },
+     "semifinalist_ranks": {
+      "Spain": 1,
+      "France": 4,
+      "Argentina": 2,
+      "England": 3
+     },
+     "stage_brier": {
+      "R32": {
+       "model": 0.17099882028333332,
+       "uniform": 0.22222222222222224
+      },
+      "R16": {
+       "model": 0.12592441499166665,
+       "uniform": 0.22222222222222224
+      },
+      "QF": {
+       "model": 0.08299959544583334,
+       "uniform": 0.1388888888888889
+      },
+      "SF": {
+       "model": 0.039890219275,
+       "uniform": 0.07638888888888888
+      },
+      "FINAL": {
+       "model": 0.021975214374999996,
+       "uniform": 0.039930555555555566
+      },
+      "WINNER": {
+       "model": 0.014059792612499998,
+       "uniform": 0.020399305555555556
+      }
+     },
+     "exit_log_score": -1.17617273976695,
+     "exit_log_score_uniform": -1.5318292765180754
+    },
+    "elo_only": {
+     "champion": "Spain",
+     "champion_p_win": 0.22783000000000003,
+     "champion_rank": 1,
+     "favourite": "Spain",
+     "favourite_p_win": 0.22783000000000003,
+     "finalist_ranks": {
+      "Spain": 1,
+      "Argentina": 2
+     },
+     "semifinalist_ranks": {
+      "Spain": 1,
+      "France": 3,
+      "Argentina": 2,
+      "England": 4
+     },
+     "stage_brier": {
+      "R32": {
+       "model": 0.18565851987499996,
+       "uniform": 0.22222222222222224
+      },
+      "R16": {
+       "model": 0.12842964111666666,
+       "uniform": 0.22222222222222224
+      },
+      "QF": {
+       "model": 0.09128789727500002,
+       "uniform": 0.1388888888888889
+      },
+      "SF": {
+       "model": 0.04124061848333334,
+       "uniform": 0.07638888888888888
+      },
+      "FINAL": {
+       "model": 0.022449934537500004,
+       "uniform": 0.039930555555555566
+      },
+      "WINNER": {
+       "model": 0.013626970508333334,
+       "uniform": 0.020399305555555556
+      }
+     },
+     "exit_log_score": -1.2217398770813583,
+     "exit_log_score_uniform": -1.5318292765180754
+    }
+   },
+   "sim_meta": {
+    "n_sims": 100000,
+    "n_batches": 100,
+    "batch_size": 1000,
+    "seed": 2026,
+    "sample_params": true,
+    "mean_penalty_share": 0.125438797222827
+   },
+   "rho": -0.04596208967019051
+  }
+ },
+ "current_as_of": "2026-10-07"
+}

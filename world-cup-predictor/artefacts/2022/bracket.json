@@ -1,0 +1,860 @@
+[
+ {
+  "round": "R16",
+  "match": 0,
+  "side_a": [
+   {
+    "team": "Netherlands",
+    "p": 0.54994
+   },
+   {
+    "team": "Qatar",
+    "p": 0.18871
+   },
+   {
+    "team": "Ecuador",
+    "p": 0.16822
+   }
+  ],
+  "side_b": [
+   {
+    "team": "United States",
+    "p": 0.28515
+   },
+   {
+    "team": "England",
+    "p": 0.27792
+   },
+   {
+    "team": "Iran",
+    "p": 0.26645
+   }
+  ],
+  "winner": [
+   {
+    "team": "Netherlands",
+    "p": 0.3714
+   },
+   {
+    "team": "England",
+    "p": 0.13259
+   },
+   {
+    "team": "United States",
+    "p": 0.12514
+   }
+  ],
+  "slot_a": [
+   "pos",
+   0,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   1,
+   2
+  ],
+  "real": [
+   "Netherlands",
+   "United States"
+  ]
+ },
+ {
+  "round": "R16",
+  "match": 1,
+  "side_a": [
+   {
+    "team": "Argentina",
+    "p": 0.84149
+   },
+   {
+    "team": "Mexico",
+    "p": 0.08708
+   },
+   {
+    "team": "Poland",
+    "p": 0.04318
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Denmark",
+    "p": 0.3175
+   },
+   {
+    "team": "France",
+    "p": 0.28227
+   },
+   {
+    "team": "Tunisia",
+    "p": 0.20435
+   }
+  ],
+  "winner": [
+   {
+    "team": "Argentina",
+    "p": 0.67578
+   },
+   {
+    "team": "France",
+    "p": 0.09906
+   },
+   {
+    "team": "Denmark",
+    "p": 0.09019
+   }
+  ],
+  "slot_a": [
+   "pos",
+   2,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   3,
+   2
+  ],
+  "real": [
+   "Argentina",
+   "Australia"
+  ]
+ },
+ {
+  "round": "R16",
+  "match": 2,
+  "side_a": [
+   {
+    "team": "France",
+    "p": 0.47436
+   },
+   {
+    "team": "Denmark",
+    "p": 0.3069
+   },
+   {
+    "team": "Tunisia",
+    "p": 0.11228
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Mexico",
+    "p": 0.40954
+   },
+   {
+    "team": "Poland",
+    "p": 0.26539
+   },
+   {
+    "team": "Saudi Arabia",
+    "p": 0.20118
+   }
+  ],
+  "winner": [
+   {
+    "team": "France",
+    "p": 0.32022
+   },
+   {
+    "team": "Denmark",
+    "p": 0.18596
+   },
+   {
+    "team": "Mexico",
+    "p": 0.15856
+   }
+  ],
+  "slot_a": [
+   "pos",
+   3,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   2,
+   2
+  ],
+  "real": [
+   "France",
+   "Poland"
+  ]
+ },
+ {
+  "round": "R16",
+  "match": 3,
+  "side_a": [
+   {
+    "team": "England",
+    "p": 0.38753
+   },
+   {
+    "team": "United States",
+    "p": 0.27962
+   },
+   {
+    "team": "Iran",
+    "p": 0.23404
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Qatar",
+    "p": 0.28831
+   },
+   {
+    "team": "Ecuador",
+    "p": 0.27689
+   },
+   {
+    "team": "Netherlands",
+    "p": 0.24738
+   }
+  ],
+  "winner": [
+   {
+    "team": "England",
+    "p": 0.21243
+   },
+   {
+    "team": "Netherlands",
+    "p": 0.16344
+   },
+   {
+    "team": "United States",
+    "p": 0.14092
+   }
+  ],
+  "slot_a": [
+   "pos",
+   1,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   0,
+   2
+  ],
+  "real": [
+   "England",
+   "Senegal"
+  ]
+ },
+ {
+  "round": "R16",
+  "match": 4,
+  "side_a": [
+   {
+    "team": "Spain",
+    "p": 0.49012
+   },
+   {
+    "team": "Germany",
+    "p": 0.253
+   },
+   {
+    "team": "Japan",
+    "p": 0.14026
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Croatia",
+    "p": 0.28482
+   },
+   {
+    "team": "Belgium",
+    "p": 0.27141
+   },
+   {
+    "team": "Canada",
+    "p": 0.23866
+   }
+  ],
+  "winner": [
+   {
+    "team": "Spain",
+    "p": 0.32835
+   },
+   {
+    "team": "Germany",
+    "p": 0.14221
+   },
+   {
+    "team": "Belgium",
+    "p": 0.13422
+   }
+  ],
+  "slot_a": [
+   "pos",
+   4,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   5,
+   2
+  ],
+  "real": [
+   "Japan",
+   "Croatia"
+  ]
+ },
+ {
+  "round": "R16",
+  "match": 5,
+  "side_a": [
+   {
+    "team": "Brazil",
+    "p": 0.81526
+   },
+   {
+    "team": "Serbia",
+    "p": 0.10106
+   },
+   {
+    "team": "Switzerland",
+    "p": 0.07321
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Uruguay",
+    "p": 0.37289
+   },
+   {
+    "team": "Portugal",
+    "p": 0.32687
+   },
+   {
+    "team": "South Korea",
+    "p": 0.23744
+   }
+  ],
+  "winner": [
+   {
+    "team": "Brazil",
+    "p": 0.63872
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.12114
+   },
+   {
+    "team": "Portugal",
+    "p": 0.11601
+   }
+  ],
+  "slot_a": [
+   "pos",
+   6,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   7,
+   2
+  ],
+  "real": [
+   "Brazil",
+   "South Korea"
+  ]
+ },
+ {
+  "round": "R16",
+  "match": 6,
+  "side_a": [
+   {
+    "team": "Belgium",
+    "p": 0.41791
+   },
+   {
+    "team": "Croatia",
+    "p": 0.274
+   },
+   {
+    "team": "Canada",
+    "p": 0.17304
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Germany",
+    "p": 0.30042
+   },
+   {
+    "team": "Spain",
+    "p": 0.26786
+   },
+   {
+    "team": "Japan",
+    "p": 0.2279
+   }
+  ],
+  "winner": [
+   {
+    "team": "Belgium",
+    "p": 0.22626
+   },
+   {
+    "team": "Spain",
+    "p": 0.17371
+   },
+   {
+    "team": "Germany",
+    "p": 0.16039
+   }
+  ],
+  "slot_a": [
+   "pos",
+   5,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   4,
+   2
+  ],
+  "real": [
+   "Morocco",
+   "Spain"
+  ]
+ },
+ {
+  "round": "R16",
+  "match": 7,
+  "side_a": [
+   {
+    "team": "Portugal",
+    "p": 0.4878
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.37699
+   },
+   {
+    "team": "South Korea",
+    "p": 0.1172
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Serbia",
+    "p": 0.41989
+   },
+   {
+    "team": "Switzerland",
+    "p": 0.34192
+   },
+   {
+    "team": "Brazil",
+    "p": 0.14447
+   }
+  ],
+  "winner": [
+   {
+    "team": "Portugal",
+    "p": 0.30427
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.22119
+   },
+   {
+    "team": "Serbia",
+    "p": 0.17111
+   }
+  ],
+  "slot_a": [
+   "pos",
+   7,
+   1
+  ],
+  "slot_b": [
+   "pos",
+   6,
+   2
+  ],
+  "real": [
+   "Portugal",
+   "Switzerland"
+  ]
+ },
+ {
+  "round": "QF",
+  "match": 0,
+  "side_a": [
+   {
+    "team": "Spain",
+    "p": 0.32835
+   },
+   {
+    "team": "Germany",
+    "p": 0.14221
+   },
+   {
+    "team": "Belgium",
+    "p": 0.13422
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Brazil",
+    "p": 0.63872
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.12114
+   },
+   {
+    "team": "Portugal",
+    "p": 0.11601
+   }
+  ],
+  "winner": [
+   {
+    "team": "Brazil",
+    "p": 0.4988
+   },
+   {
+    "team": "Spain",
+    "p": 0.13506
+   },
+   {
+    "team": "Portugal",
+    "p": 0.06747
+   }
+  ],
+  "from": [
+   4,
+   5
+  ],
+  "real": [
+   "Croatia",
+   "Brazil"
+  ]
+ },
+ {
+  "round": "QF",
+  "match": 1,
+  "side_a": [
+   {
+    "team": "Netherlands",
+    "p": 0.3714
+   },
+   {
+    "team": "England",
+    "p": 0.13259
+   },
+   {
+    "team": "United States",
+    "p": 0.12514
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Argentina",
+    "p": 0.67578
+   },
+   {
+    "team": "France",
+    "p": 0.09906
+   },
+   {
+    "team": "Denmark",
+    "p": 0.09019
+   }
+  ],
+  "winner": [
+   {
+    "team": "Argentina",
+    "p": 0.53227
+   },
+   {
+    "team": "Netherlands",
+    "p": 0.14894
+   },
+   {
+    "team": "France",
+    "p": 0.05789
+   }
+  ],
+  "from": [
+   0,
+   1
+  ],
+  "real": [
+   "Netherlands",
+   "Argentina"
+  ]
+ },
+ {
+  "round": "QF",
+  "match": 2,
+  "side_a": [
+   {
+    "team": "Belgium",
+    "p": 0.22626
+   },
+   {
+    "team": "Spain",
+    "p": 0.17371
+   },
+   {
+    "team": "Germany",
+    "p": 0.16039
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Portugal",
+    "p": 0.30427
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.22119
+   },
+   {
+    "team": "Serbia",
+    "p": 0.17111
+   }
+  ],
+  "winner": [
+   {
+    "team": "Portugal",
+    "p": 0.18345
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.12458
+   },
+   {
+    "team": "Belgium",
+    "p": 0.11072
+   }
+  ],
+  "from": [
+   6,
+   7
+  ],
+  "real": [
+   "Morocco",
+   "Portugal"
+  ]
+ },
+ {
+  "round": "QF",
+  "match": 3,
+  "side_a": [
+   {
+    "team": "England",
+    "p": 0.21243
+   },
+   {
+    "team": "Netherlands",
+    "p": 0.16344
+   },
+   {
+    "team": "United States",
+    "p": 0.14092
+   }
+  ],
+  "side_b": [
+   {
+    "team": "France",
+    "p": 0.32022
+   },
+   {
+    "team": "Denmark",
+    "p": 0.18596
+   },
+   {
+    "team": "Mexico",
+    "p": 0.15856
+   }
+  ],
+  "winner": [
+   {
+    "team": "France",
+    "p": 0.20079
+   },
+   {
+    "team": "England",
+    "p": 0.10707
+   },
+   {
+    "team": "Denmark",
+    "p": 0.1029
+   }
+  ],
+  "from": [
+   3,
+   2
+  ],
+  "real": [
+   "England",
+   "France"
+  ]
+ },
+ {
+  "round": "SF",
+  "match": 0,
+  "side_a": [
+   {
+    "team": "Argentina",
+    "p": 0.53227
+   },
+   {
+    "team": "Netherlands",
+    "p": 0.14894
+   },
+   {
+    "team": "France",
+    "p": 0.05789
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Brazil",
+    "p": 0.4988
+   },
+   {
+    "team": "Spain",
+    "p": 0.13506
+   },
+   {
+    "team": "Portugal",
+    "p": 0.06747
+   }
+  ],
+  "winner": [
+   {
+    "team": "Argentina",
+    "p": 0.32818
+   },
+   {
+    "team": "Brazil",
+    "p": 0.32181
+   },
+   {
+    "team": "Spain",
+    "p": 0.06409
+   }
+  ],
+  "from": [
+   1,
+   0
+  ],
+  "real": [
+   "Argentina",
+   "Croatia"
+  ]
+ },
+ {
+  "round": "SF",
+  "match": 1,
+  "side_a": [
+   {
+    "team": "France",
+    "p": 0.20079
+   },
+   {
+    "team": "England",
+    "p": 0.10707
+   },
+   {
+    "team": "Denmark",
+    "p": 0.1029
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Portugal",
+    "p": 0.18345
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.12458
+   },
+   {
+    "team": "Belgium",
+    "p": 0.11072
+   }
+  ],
+  "winner": [
+   {
+    "team": "Portugal",
+    "p": 0.11032
+   },
+   {
+    "team": "France",
+    "p": 0.10521
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.06942
+   }
+  ],
+  "from": [
+   3,
+   2
+  ],
+  "real": [
+   "France",
+   "Morocco"
+  ]
+ },
+ {
+  "round": "FINAL",
+  "match": 0,
+  "side_a": [
+   {
+    "team": "Argentina",
+    "p": 0.32818
+   },
+   {
+    "team": "Brazil",
+    "p": 0.32181
+   },
+   {
+    "team": "Spain",
+    "p": 0.06409
+   }
+  ],
+  "side_b": [
+   {
+    "team": "Portugal",
+    "p": 0.11032
+   },
+   {
+    "team": "France",
+    "p": 0.10521
+   },
+   {
+    "team": "Uruguay",
+    "p": 0.06942
+   }
+  ],
+  "winner": [
+   {
+    "team": "Brazil",
+    "p": 0.28991
+   },
+   {
+    "team": "Argentina",
+    "p": 0.28089
+   },
+   {
+    "team": "Spain",
+    "p": 0.06157
+   }
+  ],
+  "from": [
+   0,
+   1
+  ],
+  "real": [
+   "Argentina",
+   "France"
+  ]
+ }
+]

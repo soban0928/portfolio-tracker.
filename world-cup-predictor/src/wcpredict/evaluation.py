@@ -142,3 +142,36 @@ def expected_calibration_error(y: np.ndarray, p: np.ndarray, bins: int = 10) -> 
     t = calibration_table(y, p, bins)
     return float((t["count"] * (t["mean_predicted"] - t["observed_rate"]).abs()).sum()
                  / t["count"].sum())  # fmt: skip
+
+
+def oof_predictions(
+    model_factory: Callable[[], MatchModel],
+    features: pd.DataFrame,
+    test_years: Iterable[int],
+) -> pd.DataFrame:
+    """Out-of-fold predictions from expanding-window CV (see :func:`time_series_cv`).
+
+    Returns:
+        Long frame: date, year, match_type, result, model, p_H, p_D, p_A.
+    """
+    frames = []
+    for year in test_years:
+        train = training_rows(features, pd.Timestamp(year=year, month=1, day=1))
+        test = features[features["date"].dt.year == year]
+        model = model_factory()
+        model.fit(train, encode(train["result"]))
+        p = model.predict_proba(test)
+        f = test[["date", "match_type", "tournament", "result"]].copy()
+        f["year"], f["model"] = year, model.name
+        f[["p_H", "p_D", "p_A"]] = p
+        frames.append(f)
+    return pd.concat(frames, ignore_index=True)
+
+
+def summarise_predictions(preds: pd.DataFrame) -> pd.DataFrame:
+    """Metrics per model from a long prediction frame (plus ECE)."""
+    rows = {}
+    for model, g in preds.groupby("model", sort=False):
+        y, p = encode(g["result"]), g[["p_H", "p_D", "p_A"]].to_numpy()
+        rows[model] = {**score(y, p), "ece": expected_calibration_error(y, p)}
+    return pd.DataFrame(rows).T

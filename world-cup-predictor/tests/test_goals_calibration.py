@@ -135,3 +135,16 @@ def test_calibration_fixes_overconfidence(method):
 def test_calibration_rejects_unknown_method():
     with pytest.raises(ValueError):
         CalibratedModel(BaseRateModel, method="magic")
+
+
+def test_elo_only_goals_model_terms():
+    from wcpredict.goals import elo_only_goals_model
+
+    X = simulated_matches(3000)
+    m = elo_only_goals_model().fit(X)
+    assert m.beta_.shape == (5,) and list(m.coefficients().index) == [
+        "const", "elo", "venue", "friendly", "tournament"
+    ]  # fmt: skip
+    assert m.predict_proba(X.iloc[:5]).shape == (5, 3)
+    with pytest.raises(ValueError):
+        GoalsModel(terms=("elo",)).fit(X)

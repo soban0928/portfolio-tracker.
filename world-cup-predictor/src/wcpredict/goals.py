@@ -89,11 +89,14 @@ class GoalsModel:
     Attributes:
         half_life_years: Time-decay half-life for match weights.
         ridge: L2 penalty on the non-intercept coefficients (stabilises fits).
+        terms: Subset of :data:`TERMS` to use (``"const"`` must be first); e.g.
+            ``("const", "elo", "venue")`` gives an Elo-only goals model.
     """
 
     half_life_years: float = 8.0
     ridge: float = 1.0
     name: str = "Dixon-Coles (goals)"
+    terms: tuple[str, ...] = tuple(TERMS)
     features: list[str] = field(
         default_factory=lambda: [
             "elo_diff",
@@ -107,6 +110,10 @@ class GoalsModel:
         ]  # fmt: skip
     )
 
+    def _design(self, X: pd.DataFrame, side: str) -> np.ndarray:
+        cols = [TERMS.index(t) for t in self.terms]
+        return design(X, side)[:, cols]
+
     def _weights(self, dates: pd.Series) -> np.ndarray:
         age = (dates.max() - dates).dt.days.to_numpy() / 365.25
         return 0.5 ** (age / self.half_life_years)
@@ -119,7 +126,9 @@ class GoalsModel:
             y: Ignored (outcomes are derived from the scores); kept for the shared interface.
         """
         w = self._weights(X["date"])
-        D = np.vstack([design(X, "home"), design(X, "away")])
+        if self.terms[0] != "const":
+            raise ValueError("terms must start with 'const'")
+        D = np.vstack([self._design(X, "home"), self._design(X, "away")])
         goals = np.concatenate([X["home_score"].to_numpy(), X["away_score"].to_numpy()])
         ww = np.concatenate([w, w])
         penalty = np.full(D.shape[1], self.ridge)
@@ -157,7 +166,7 @@ class GoalsModel:
     def rates(self, X: pd.DataFrame, beta: np.ndarray | None = None):
         """Expected goals (λ_home, λ_away) for each row."""
         b = self.beta_ if beta is None else beta
-        return np.exp(design(X, "home") @ b), np.exp(design(X, "away") @ b)
+        return np.exp(self._design(X, "home") @ b), np.exp(self._design(X, "away") @ b)
 
     def score_matrix(self, X: pd.DataFrame) -> np.ndarray:
         """Scoreline probability matrices for each row."""
@@ -175,8 +184,17 @@ class GoalsModel:
     def coefficients(self) -> pd.DataFrame:
         """Fitted coefficients with standard errors."""
         return pd.DataFrame(
-            {"coef": self.beta_, "std_err": np.sqrt(np.diag(self.cov_))}, index=TERMS
+            {"coef": self.beta_, "std_err": np.sqrt(np.diag(self.cov_))}, index=list(self.terms)
         )
+
+
+def elo_only_goals_model(**kwargs: object) -> GoalsModel:
+    """Baseline goals model using only the Elo difference, venue and match context."""
+    return GoalsModel(
+        terms=("const", "elo", "venue", "friendly", "tournament"),
+        name="Dixon-Coles Elo-only (goals)",
+        **kwargs,  # type: ignore[arg-type]
+    )
 
 
 def top_scorelines(matrix: np.ndarray, k: int = 5) -> list[tuple[int, int, float]]:

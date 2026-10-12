@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# App state
+*.db
+*.sqlite
+*.sqlite3
+
+# Downloaded market data (bundled samples live in data/sample/)
+data/downloaded/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+.streamlit/secrets.toml

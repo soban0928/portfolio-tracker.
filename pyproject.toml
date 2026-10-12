@@ -42,6 +42,7 @@ convention = "google"
 testpaths = ["tests"]
 pythonpath = ["src"]
 addopts = "-ra"
+filterwarnings = ["error"]
 
 [tool.coverage.run]
 source = ["src/simulator"]

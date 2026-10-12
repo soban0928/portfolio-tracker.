@@ -138,3 +138,27 @@ def test_full_models_beat_base_rates_out_of_sample(features):
     s = summarise_cv(cv)
     assert s.loc["Elo-only (logistic)", "log_loss"] < s.loc["Base rates", "log_loss"] - 0.1
     assert s.loc["XGBoost", "log_loss"] < s.loc["Base rates", "log_loss"] - 0.1
+
+
+def test_pickling_stores_xgboost_in_portable_format(small):
+    """Saved XGBoost models must not depend on the installed XGBoost version."""
+    import pickle
+
+    from wcpredict.models import _PortableXGBoost
+
+    train, y, test = small
+    model = xgboost(BASE_FEATURES, n_estimators=20).fit(train, y)
+    state = model.__getstate__()
+    assert isinstance(state["estimator"], _PortableXGBoost)
+    assert state["estimator"].model_json.startswith(b"{")  # XGBoost JSON model format
+    restored = pickle.loads(pickle.dumps(model))
+    np.testing.assert_array_equal(restored.predict_proba(test), model.predict_proba(test))
+    hyper = ["objective", "n_estimators", "learning_rate", "max_depth", "min_child_weight",
+             "subsample", "colsample_bytree", "reg_lambda", "random_state"]  # fmt: skip
+    for key in hyper:
+        assert restored.estimator.get_params()[key] == model.estimator.get_params()[key], key
+
+    unfitted = pickle.loads(pickle.dumps(xgboost(BASE_FEATURES)))
+    assert not unfitted.estimator.__sklearn_is_fitted__()
+    lr = logistic(BASE_FEATURES).fit(train, y)
+    assert lr.__getstate__()["estimator"] is lr.estimator  # non-XGBoost: pickled as usual

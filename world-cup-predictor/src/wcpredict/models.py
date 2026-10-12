@@ -11,7 +11,8 @@ mirror, so P(A beats B) does not depend on which team is listed first.
 
 from __future__ import annotations
 
-from typing import Protocol
+from dataclasses import dataclass
+from typing import Any, Protocol
 
 import numpy as np
 import pandas as pd
@@ -19,7 +20,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from xgboost import XGBClassifier
+from xgboost import XGBClassifier, XGBModel
 
 from wcpredict.config import SEED
 from wcpredict.features import swap_sides
@@ -59,8 +60,43 @@ def mirror(X: pd.DataFrame, y: np.ndarray) -> tuple[pd.DataFrame, np.ndarray]:
     return pd.concat([X, swap_sides(X)], ignore_index=True), np.concatenate([y, flip_labels(y)])
 
 
+@dataclass(frozen=True)
+class _PortableXGBoost:
+    """A fitted XGBoost estimator in XGBoost's version-portable JSON model format.
+
+    Pickling an XGBoost estimator directly embeds XGBoost's internal,
+    version-specific serialisation. Loading that under a different XGBoost
+    version is unsupported: the native library logs a warning (forwarded to
+    Python by XGBoost's ctypes log callback), and results are not guaranteed.
+    This matters in practice because Python 3.11 can only install XGBoost < 3.3
+    while 3.12+ gets newer releases. The JSON model format is XGBoost's
+    documented way to move models between versions.
+    """
+
+    estimator_class: type
+    params: dict[str, Any]
+    model_json: bytes
+
+    @classmethod
+    def from_estimator(cls, estimator: XGBModel) -> _PortableXGBoost:
+        """Capture constructor parameters and the trained booster as JSON."""
+        raw = estimator.get_booster().save_raw(raw_format="json")
+        return cls(type(estimator), estimator.get_params(), bytes(raw))
+
+    def restore(self) -> XGBModel:
+        """Rebuild the fitted estimator with the installed XGBoost version."""
+        estimator = self.estimator_class(**self.params)
+        estimator.load_model(bytearray(self.model_json))
+        return estimator
+
+
 class SklearnModel:
-    """Wraps any sklearn-style classifier with mirroring and symmetric prediction."""
+    """Wraps any sklearn-style classifier with mirroring and symmetric prediction.
+
+    Pickling (e.g. ``joblib.dump``) stores fitted XGBoost estimators in XGBoost's
+    portable JSON format, so saved models load cleanly under other XGBoost
+    versions; other estimators are pickled as usual.
+    """
 
     def __init__(self, name: str, estimator: object, features: list[str]) -> None:
         """Create a named model over ``features``."""
@@ -84,6 +120,18 @@ class SklearnModel:
         p_mirror = flip_proba(self._raw(swap_sides(X[self.features])))
         out = 0.5 * (p + p_mirror)
         return out / out.sum(axis=1, keepdims=True)
+
+    def __getstate__(self) -> dict[str, Any]:
+        state = self.__dict__.copy()
+        est = state["estimator"]
+        if isinstance(est, XGBModel) and est.__sklearn_is_fitted__():
+            state["estimator"] = _PortableXGBoost.from_estimator(est)
+        return state
+
+    def __setstate__(self, state: dict[str, Any]) -> None:
+        if isinstance(state["estimator"], _PortableXGBoost):
+            state = {**state, "estimator": state["estimator"].restore()}
+        self.__dict__.update(state)
 
 
 class BaseRateModel:

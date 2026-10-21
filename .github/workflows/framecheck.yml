@@ -1,0 +1,25 @@
+name: framecheck
+
+on:
+  push:
+    paths: ["framecheck/**", ".github/workflows/framecheck.yml"]
+  pull_request:
+    paths: ["framecheck/**", ".github/workflows/framecheck.yml"]
+
+defaults:
+  run:
+    working-directory: framecheck
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: framecheck/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
